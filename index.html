@@ -35,7 +35,7 @@
       z-index: 1;
     }
 
-    /* Floating Zoom-In Zoom-Out Background Text */
+    /* Floating Zoom Background Text */
     .bg-text-container {
       position: fixed;
       top: 0;
@@ -50,7 +50,7 @@
     .bg-hb-text {
       position: absolute;
       font-family: 'Fredoka One', cursive;
-      color: rgba(255, 105, 180, 0.18);
+      color: rgba(255, 105, 180, 0.16);
       white-space: nowrap;
       user-select: none;
       animation: floatZoom 6s ease-in-out infinite alternate;
@@ -58,34 +58,32 @@
       text-transform: uppercase;
     }
 
-    .bg-text-1 { top: 10%; left: 5%; font-size: 55px; animation-duration: 5s; }
-    .bg-text-2 { top: 45%; right: 5%; font-size: 65px; animation-duration: 7s; animation-delay: 1.5s; color: rgba(255, 215, 0, 0.16); }
-    .bg-text-3 { bottom: 12%; left: 10%; font-size: 50px; animation-duration: 6s; animation-delay: 3s; color: rgba(0, 229, 255, 0.15); }
-    .bg-text-4 { top: 75%; right: 15%; font-size: 45px; animation-duration: 5.5s; animation-delay: 2s; }
+    .bg-text-1 { top: 8%; left: 4%; font-size: clamp(28px, 6vw, 55px); animation-duration: 5s; }
+    .bg-text-2 { top: 40%; right: 4%; font-size: clamp(32px, 7vw, 65px); animation-duration: 7s; animation-delay: 1.5s; color: rgba(255, 215, 0, 0.14); }
+    .bg-text-3 { bottom: 10%; left: 8%; font-size: clamp(26px, 5.5vw, 50px); animation-duration: 6s; animation-delay: 3s; color: rgba(0, 229, 255, 0.14); }
 
     @keyframes floatZoom {
-      0% { transform: scale(0.85) rotate(-3deg); opacity: 0.12; }
-      50% { opacity: 0.35; }
-      100% { transform: scale(1.25) rotate(3deg); opacity: 0.22; }
+      0% { transform: scale(0.9) rotate(-2deg); opacity: 0.12; }
+      100% { transform: scale(1.15) rotate(2deg); opacity: 0.28; }
     }
 
+    /* Music Control Button */
     .music-btn {
       position: fixed;
-      top: 14px;
-      right: 14px;
+      top: 12px;
+      right: 12px;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.28);
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.45);
       color: #fff;
-      padding: 8px 16px;
-      border-radius: 25px;
-      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.3s ease;
+      gap: 5px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
     }
 
@@ -97,7 +95,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px 10px;
+      padding: 15px 8px;
     }
 
     .screen-stage {
@@ -107,8 +105,8 @@
       justify-content: center;
       text-align: center;
       width: 100%;
-      max-width: 850px;
-      animation: fadeIn 0.8s ease forwards;
+      max-width: 600px;
+      animation: fadeIn 0.6s ease forwards;
     }
 
     .screen-stage.active {
@@ -116,7 +114,7 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -125,16 +123,16 @@
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(15px);
       border: 1px solid rgba(255, 192, 203, 0.3);
-      border-radius: 28px;
-      padding: 40px 25px;
+      border-radius: 24px;
+      padding: 35px 20px;
       box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
-      max-width: 440px;
+      max-width: 400px;
       width: 90%;
     }
 
     .glow-title {
       font-family: 'Great Vibes', cursive;
-      font-size: 52px;
+      font-size: clamp(40px, 9vw, 55px);
       color: #ff94c2;
       text-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
       line-height: 1.1;
@@ -146,53 +144,48 @@
       color: #fff;
       border: none;
       outline: none;
-      padding: 13px 32px;
-      font-size: 16px;
+      padding: 12px 28px;
+      font-size: 15px;
       font-weight: 600;
       border-radius: 30px;
       cursor: pointer;
       box-shadow: 0 5px 20px rgba(233, 30, 99, 0.5);
-      transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-    }
-
-    .primary-btn:hover {
-      transform: scale(1.05);
+      gap: 8px;
     }
 
     /* STAGE 2 */
     .birthday-text-reveal {
       font-family: 'Fredoka One', cursive;
-      font-size: 52px;
+      font-size: clamp(40px, 9vw, 56px);
       background-image: linear-gradient(45deg, #ff4081, #ffd700, #00e5ff);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
       color: transparent;
       margin-bottom: 8px;
-      filter: drop-shadow(0 0 18px rgba(255, 105, 180, 0.7));
+      filter: drop-shadow(0 0 16px rgba(255, 105, 180, 0.7));
     }
 
     .name-banner-intro {
       display: inline-block;
       background: linear-gradient(90deg, #d81b60, #ad1457);
-      padding: 8px 30px;
+      padding: 7px 24px;
       border-radius: 40px;
-      font-size: 24px;
+      font-size: clamp(18px, 5vw, 24px);
       font-weight: 800;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       color: #fff;
       box-shadow: 0 5px 20px rgba(216, 27, 96, 0.5);
-      margin-bottom: 25px;
+      margin-bottom: 22px;
     }
 
     /* STAGE 3 */
     .cake-container {
       position: relative;
-      margin: 35px auto 20px;
-      width: 260px;
+      margin: 30px auto 20px;
+      width: 240px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -200,27 +193,25 @@
 
     .candle {
       position: relative;
-      width: 16px;
-      height: 52px;
-      background: repeating-linear-gradient(45deg, #fff, #fff 6px, #ff4081 6px, #ff4081 12px);
+      width: 15px;
+      height: 48px;
+      background: repeating-linear-gradient(45deg, #fff, #fff 5px, #ff4081 5px, #ff4081 10px);
       border-radius: 5px 5px 2px 2px;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      transition: transform 0.2s;
       margin-bottom: -5px;
       z-index: 5;
     }
 
     .flame {
       position: absolute;
-      top: -24px;
+      top: -22px;
       left: 50%;
       transform: translateX(-50%);
-      width: 14px;
-      height: 24px;
+      width: 13px;
+      height: 22px;
       background: radial-gradient(ellipse at 50% 80%, #fff 20%, #ffe600 50%, #ff5722 80%);
       border-radius: 50% 50% 35% 35%;
-      box-shadow: 0 0 18px rgba(255, 230, 0, 0.95), 0 -5px 14px rgba(255, 87, 34, 0.7);
+      box-shadow: 0 0 16px rgba(255, 230, 0, 0.95);
       animation: flicker 0.15s infinite alternate;
       transition: opacity 0.3s;
     }
@@ -230,42 +221,34 @@
       100% { transform: translateX(-50%) rotate(3deg) scale(1.1); }
     }
 
-    .candle.blown .flame {
-      opacity: 0;
-      pointer-events: none;
-    }
-
+    .candle.blown .flame { opacity: 0; pointer-events: none; }
     .smoke {
       display: none;
       position: absolute;
-      top: -30px;
+      top: -26px;
       left: 50%;
       transform: translateX(-50%);
-      width: 12px;
-      height: 25px;
+      width: 10px;
+      height: 22px;
       background: rgba(220, 220, 220, 0.6);
       filter: blur(4px);
       border-radius: 50%;
       animation: smokeRise 1.2s forwards;
     }
-
-    .candle.blown .smoke {
-      display: block;
-    }
+    .candle.blown .smoke { display: block; }
 
     @keyframes smokeRise {
       0% { opacity: 0.8; transform: translate(-50%, 0) scale(1); }
-      100% { opacity: 0; transform: translate(-90%, -40px) scale(3); }
+      100% { opacity: 0; transform: translate(-90%, -35px) scale(3); }
     }
 
     .cake-body {
       position: relative;
-      width: 220px;
-      height: 90px;
+      width: 200px;
+      height: 80px;
       background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
-      border-radius: 16px 16px 8px 8px;
-      border: 4px solid #fff;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      border-radius: 14px 14px 8px 8px;
+      border: 3px solid #fff;
       overflow: hidden;
     }
 
@@ -273,73 +256,55 @@
       position: absolute;
       top: 0;
       width: 100%;
-      height: 28px;
+      height: 24px;
       background: #ff4081;
-      border-radius: 12px 12px 20px 20px;
-    }
-
-    .cake-frosting::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      height: 14px;
-      background: radial-gradient(circle, #ff4081 70%, transparent 72%) repeat-x;
-      background-size: 24px 20px;
     }
 
     .cake-plate {
-      width: 270px;
-      height: 18px;
+      width: 240px;
+      height: 16px;
       background: #e0e0e0;
-      border-radius: 20px;
-      margin-top: -6px;
+      border-radius: 18px;
+      margin-top: -5px;
     }
 
     /* STAGE 4 */
     .gift-3d-wrap {
-      perspective: 700px;
-      margin: 30px auto;
+      margin: 25px auto;
       cursor: pointer;
     }
 
     .gift-box {
       position: relative;
-      width: 130px;
-      height: 130px;
+      width: 120px;
+      height: 120px;
       background: linear-gradient(135deg, #e91e63, #c2185b);
       border-radius: 16px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .gift-box:hover {
-      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.5);
     }
 
     .gift-ribbon-v {
       position: absolute;
-      width: 24px;
+      width: 22px;
       height: 100%;
       background: #ffd700;
-      left: calc(50% - 12px);
+      left: calc(50% - 11px);
     }
 
     .gift-ribbon-h {
       position: absolute;
-      height: 24px;
+      height: 22px;
       width: 100%;
       background: #ffd700;
-      top: calc(50% - 12px);
+      top: calc(50% - 11px);
     }
 
     .gift-bow {
       position: absolute;
-      top: -24px;
+      top: -22px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 32px;
+      font-size: 28px;
       color: #ffd700;
     }
 
@@ -347,49 +312,33 @@
     .envelope-card {
       background: linear-gradient(135deg, #fff5f7, #ffebee);
       color: #333;
-      padding: 30px 20px;
-      border-radius: 20px;
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
-      max-width: 420px;
+      padding: 25px 18px;
+      border-radius: 18px;
+      max-width: 380px;
       width: 90%;
-      border: 3px dashed #ff4081;
+      border: 2px dashed #ff4081;
       cursor: pointer;
-      transition: all 0.4s ease;
     }
 
     /* ========================================================
-       STAGE 6: RICH & FESTIVE POSTER (No Empty Look!)
+       STAGE 6: FULLY RESPONSIVE AUTO-FIT POSTER (MOBILE & DESKTOP)
        ======================================================== */
     .poster-container {
       width: 100%;
-      max-width: 490px;
-      margin: 10px auto 35px;
-      background: radial-gradient(circle at 50% 10%, #ffffff 0%, #fff6f9 50%, #feeef5 100%) !important;
-      border-radius: 36px;
-      box-shadow: 0 20px 65px rgba(0, 0, 0, 0.75), 0 0 35px rgba(255, 105, 180, 0.35);
-      padding: 30px 20px 32px;
+      max-width: 440px; /* Perfectly framed for desktop and mobile */
+      margin: 5px auto 25px;
+      background: radial-gradient(circle at 50% 8%, #ffffff 0%, #fff7fa 50%, #feeef5 100%) !important;
+      border-radius: 28px;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.75), 0 0 25px rgba(255, 105, 180, 0.35);
+      padding: 22px 14px 24px;
       color: #1a1a1a !important;
       position: relative;
-      border: 6px solid #ffffff;
-      animation: zoomInPoster 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.2) forwards;
+      border: 4px solid #ffffff;
       overflow: hidden;
       z-index: 5;
     }
 
-    @keyframes zoomInPoster {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    /* Scattered Confetti Decor to fill empty card space */
-    .confetti-decor {
-      position: absolute;
-      pointer-events: none;
-      z-index: 1;
-      font-size: 14px;
-      opacity: 0.75;
-    }
-
+    /* Scaled Balloons for Mobile */
     .balloon-art {
       position: absolute;
       pointer-events: none;
@@ -397,50 +346,26 @@
       z-index: 1;
     }
 
-    .b-pink-top-l {
-      width: 52px; height: 64px;
-      top: -10px; left: 8px;
-      background: radial-gradient(circle at 35% 30%, #ff8cb2, #ff2a7a, #c2185b);
-    }
-    .b-purple-top-l {
-      width: 50px; height: 62px;
-      top: 42px; left: -14px;
-      background: radial-gradient(circle at 35% 30%, #da8aff, #9b27b0, #6a1b9a);
-    }
-    .b-blue-top-l {
-      width: 42px; height: 52px;
-      top: 75px; left: 16px;
-      background: radial-gradient(circle at 35% 30%, #80d8ff, #00b0ff, #0288d1);
-    }
+    .b-pink-top-l { width: clamp(38px, 10vw, 48px); height: clamp(48px, 12vw, 60px); top: -8px; left: 4px; background: radial-gradient(circle at 35% 30%, #ff8cb2, #ff2a7a, #c2185b); }
+    .b-purple-top-l { width: clamp(36px, 9vw, 45px); height: clamp(45px, 11vw, 56px); top: 35px; left: -10px; background: radial-gradient(circle at 35% 30%, #da8aff, #9b27b0, #6a1b9a); }
+    .b-blue-top-l { width: clamp(32px, 8vw, 40px); height: clamp(40px, 10vw, 48px); top: 65px; left: 12px; background: radial-gradient(circle at 35% 30%, #80d8ff, #00b0ff, #0288d1); }
 
-    .b-gold-top-r {
-      width: 52px; height: 64px;
-      top: -8px; right: 10px;
-      background: radial-gradient(circle at 35% 30%, #fff3b0, #fbc02d, #f57f17);
-    }
-    .b-purple-top-r {
-      width: 48px; height: 60px;
-      top: 40px; right: -12px;
-      background: radial-gradient(circle at 35% 30%, #ea80fc, #ab47bc, #7b1fa2);
-    }
-    .b-blue-top-r {
-      width: 44px; height: 54px;
-      top: 72px; right: 22px;
-      background: radial-gradient(circle at 35% 30%, #80d8ff, #29b6f6, #0288d1);
-    }
+    .b-gold-top-r { width: clamp(38px, 10vw, 48px); height: clamp(48px, 12vw, 60px); top: -6px; right: 6px; background: radial-gradient(circle at 35% 30%, #fff3b0, #fbc02d, #f57f17); }
+    .b-purple-top-r { width: clamp(36px, 9vw, 45px); height: clamp(45px, 11vw, 56px); top: 34px; right: -8px; background: radial-gradient(circle at 35% 30%, #ea80fc, #ab47bc, #7b1fa2); }
+    .b-blue-top-r { width: clamp(32px, 8vw, 40px); height: clamp(40px, 10vw, 48px); top: 62px; right: 16px; background: radial-gradient(circle at 35% 30%, #80d8ff, #29b6f6, #0288d1); }
 
     .poster-header {
       position: relative;
       text-align: center;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       z-index: 2;
     }
 
     .main-hb-title {
       font-family: 'Marcellus', serif;
-      font-size: 34px;
+      font-size: clamp(25px, 6.8vw, 32px);
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       background-image: linear-gradient(90deg, #d81b60 0%, #ff8f00 40%, #00897b 75%, #3949ab 100%);
       -webkit-background-clip: text;
       background-clip: text;
@@ -452,48 +377,50 @@
 
     .pinki-nini-title {
       font-family: 'Fredoka One', cursive;
-      font-size: 38px;
+      font-size: clamp(28px, 7.8vw, 36px);
       color: #9c1b58;
-      letter-spacing: 1.5px;
+      letter-spacing: 1px;
       text-shadow: 
-        2px 2px 0px #ffd54f, 
-        -2px -2px 0px #ffd54f, 
-        2px -2px 0px #ffd54f, 
-        -2px 2px 0px #ffd54f;
-      margin-bottom: 6px;
+        1.5px 1.5px 0px #ffd54f, 
+        -1.5px -1.5px 0px #ffd54f, 
+        1.5px -1.5px 0px #ffd54f, 
+        -1.5px 1.5px 0px #ffd54f;
+      margin-bottom: 4px;
     }
 
     .stars-divider {
-      font-size: 16px;
+      font-size: 14px;
       color: #ffb300;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      margin-bottom: 10px;
+      gap: 6px;
+      margin-bottom: 6px;
     }
 
     .exact-dua-box {
       font-family: 'Poppins', sans-serif;
-      font-size: 13.5px;
+      font-size: clamp(11.5px, 3.1vw, 13px);
       font-weight: 600;
-      line-height: 1.55;
+      line-height: 1.45;
       color: #222 !important;
       text-align: center;
-      padding: 0 8px;
-      margin-bottom: 12px;
+      padding: 0 4px;
+      margin-bottom: 8px;
     }
 
-    .dua-line { margin-bottom: 3px; }
+    .dua-line { margin-bottom: 2px; }
     .bold-word { font-weight: 800; color: #880e4f; }
     .pink-word { font-weight: 800; color: #d81b60; }
 
-    /* 4 Photos Grid */
+    /* ========================================================
+       4 PHOTOS AUTO-FIT FLUID GRID (NO CUTTING ON ANY PHONE)
+       ======================================================== */
     .photos-canvas-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px 14px;
-      margin: 12px 0 20px;
+      gap: clamp(10px, 2.8vw, 16px);
+      margin: 8px 0 12px;
       position: relative;
       z-index: 2;
     }
@@ -504,22 +431,17 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    /* 1. Circle */
-    .slot-1 {
-      width: 162px;
-      height: 162px;
-      margin: 0 auto;
-    }
-
-    .circle-holder {
       width: 100%;
-      height: 100%;
+    }
+
+    /* 1. TOP-LEFT: Circle Frame */
+    .slot-1 .circle-holder {
+      width: clamp(125px, 36vw, 155px);
+      height: clamp(125px, 36vw, 155px);
       border-radius: 50%;
       overflow: hidden;
-      border: 5px solid #ffffff;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      border: 3.5px solid #ffffff;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
       background: #fce4ec;
     }
 
@@ -531,32 +453,25 @@
       display: block;
     }
 
-    /* 2. Scallop Cloud */
-    .slot-2 {
-      width: 168px;
-      height: 168px;
-      margin: 0 auto;
-      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.18));
+    /* 2. TOP-RIGHT: Scalloped Frame */
+    .slot-2 .scallop-svg-box {
+      width: clamp(130px, 37vw, 160px);
+      height: clamp(130px, 37vw, 160px);
+      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.18));
     }
 
-    .scallop-svg-box {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* 3. BOTH BOTTOM RECTANGLE CARDS */
+    /* 3 & 4. BOTTOM STANDING RECTANGLES - FULL ADAPTIVE HEIGHT */
     .slot-3, .slot-4 {
-      width: 168px;
-      margin: 5px auto 0;
+      width: 100%;
     }
 
     .rect-card {
-      width: 100%;
-      height: 195px;
+      width: clamp(125px, 36vw, 155px);
+      height: clamp(140px, 42vw, 185px); /* Automatically scales with mobile height */
       background: #ffffff;
-      border: 5px solid #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+      border: 3.5px solid #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
       overflow: hidden;
       position: relative;
     }
@@ -569,23 +484,21 @@
       display: block;
     }
 
-    /* Custom Badges */
     .photo-badge-tag {
       font-family: 'Caveat', cursive;
-      font-size: 16px;
+      font-size: clamp(12px, 3.4vw, 15px);
       font-weight: 700;
       color: #9c1b58;
       background: #ffe3ee;
-      padding: 3px 14px;
-      border-radius: 15px;
-      margin-top: 8px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin-top: 5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       display: inline-block;
       border: 1px solid #ffccd8;
     }
 
-    /* Center Doodle between images */
+    /* Center Doodle */
     .center-doodle {
       position: absolute;
       top: 50%;
@@ -594,67 +507,65 @@
       background: #ffffff;
       border: 2px solid #ff4081;
       border-radius: 50%;
-      width: 38px;
-      height: 38px;
+      width: clamp(28px, 8vw, 36px);
+      height: clamp(28px, 8vw, 36px);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 18px;
-      box-shadow: 0 4px 12px rgba(255, 64, 129, 0.3);
+      font-size: clamp(13px, 4vw, 17px);
+      box-shadow: 0 3px 10px rgba(255, 64, 129, 0.3);
       z-index: 10;
     }
 
-    /* Bottom Festive Footer */
+    /* Scaled Festive Footer */
     .poster-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 15px;
-      padding: 0 6px;
+      margin-top: 10px;
+      padding: 0 4px;
       position: relative;
       z-index: 2;
     }
 
-    .mini-cake {
-      font-size: 38px;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-    }
-
-    .mini-gift {
-      font-size: 38px;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-    }
+    .mini-cake { font-size: clamp(26px, 7vw, 36px); }
+    .mini-gift { font-size: clamp(26px, 7vw, 36px); }
 
     .shining-ribbon {
       background: linear-gradient(90deg, #ff4081, #ff80bf, #ff4081);
       color: #ffffff;
       font-family: 'Caveat', cursive;
-      font-size: 18px;
+      font-size: clamp(13px, 3.8vw, 17px);
       font-weight: 700;
-      padding: 6px 20px;
-      border-radius: 25px;
+      padding: 4px 14px;
+      border-radius: 20px;
       display: inline-block;
-      box-shadow: 0 4px 14px rgba(255, 64, 129, 0.4);
-      letter-spacing: 0.5px;
+      box-shadow: 0 3px 10px rgba(255, 64, 129, 0.35);
     }
 
     .bottom-sparkles {
       text-align: center;
-      font-size: 22px;
+      font-size: clamp(16px, 4.5vw, 20px);
       color: #ffd700;
-      letter-spacing: 12px;
-      margin-top: 6px;
+      letter-spacing: 8px;
+      margin-top: 4px;
+    }
+
+    /* Micro screens (Under 360px width) */
+    @media (max-width: 360px) {
+      .poster-container { padding: 16px 8px 18px; }
+      .photos-canvas-grid { gap: 6px; }
+      .rect-card { height: 135px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Animated Zoom Background Text -->
+  <!-- Background Zoom Text -->
   <div class="bg-text-container">
     <div class="bg-hb-text bg-text-1">Happy Birthday ✨</div>
     <div class="bg-hb-text bg-text-2">Happy Birthday 🎉</div>
     <div class="bg-hb-text bg-text-3">Happy Birthday 💖</div>
-    <div class="bg-hb-text bg-text-4">Happy Birthday 🌸</div>
   </div>
 
   <canvas id="dotsCanvas"></canvas>
@@ -668,9 +579,9 @@
     <!-- STAGE 1: Welcome -->
     <div class="screen-stage active" id="stage1">
       <div class="welcome-card">
-        <div style="font-size: 45px; margin-bottom: 10px;">✨🌸✨</div>
+        <div style="font-size: 38px; margin-bottom: 8px;">✨🌸✨</div>
         <h1 class="glow-title">Surprise for You</h1>
-        <p style="color: #fed7e2; font-size: 15px; margin-bottom: 25px;">एक ख़ास दिन, एक बेहद ख़ास इंसान के लिए...</p>
+        <p style="color: #fed7e2; font-size: 14px; margin-bottom: 22px;">एक ख़ास दिन, एक बेहद ख़ास इंसान के लिए...</p>
         <button class="primary-btn" onclick="goToStage(2)">
           <span>जादू शुरू करें 🎁</span>
         </button>
@@ -681,7 +592,7 @@
     <div class="screen-stage" id="stage2">
       <h1 class="birthday-text-reveal">Happy Birthday</h1>
       <div class="name-banner-intro">PINKI (NiNi)</div>
-      <p style="color: #ffd7e2; font-size: 15px; max-width: 400px; line-height: 1.6; margin-bottom: 25px;">
+      <p style="color: #ffd7e2; font-size: 14px; max-width: 380px; line-height: 1.5; margin-bottom: 20px;">
         आपके इस ख़ास दिन को और भी हसीन बनाने के लिए केक तैयार किया गया है...
       </p>
       <button class="primary-btn" onclick="goToStage(3)">
@@ -691,8 +602,8 @@
 
     <!-- STAGE 3: Cake & Candle -->
     <div class="screen-stage" id="stage3">
-      <h2 style="font-size: 24px; color: #ff80bf; margin-bottom: 6px;">मोमबत्ती पर क्लिक करके बुझाएँ!</h2>
-      <p style="color: #eee; font-size: 14px;">(Click on the candle to blow it out)</p>
+      <h2 style="font-size: 20px; color: #ff80bf; margin-bottom: 4px;">मोमबत्ती पर क्लिक करके बुझाएँ!</h2>
+      <p style="color: #eee; font-size: 13px;">(Click on the candle to blow it out)</p>
 
       <div class="cake-container">
         <div class="candle" id="singleCandle" onclick="blowSingleCandle()">
@@ -702,14 +613,14 @@
 
         <div class="cake-body">
           <div class="cake-frosting"></div>
-          <div style="position: absolute; bottom: 12px; width: 100%; text-align: center; font-size: 11px; font-weight: 600; color: #c2185b; letter-spacing: 1px;">
+          <div style="position: absolute; bottom: 10px; width: 100%; text-align: center; font-size: 11px; font-weight: 600; color: #c2185b; letter-spacing: 1px;">
             ✦ NINI'S SPECIAL DAY ✦
           </div>
         </div>
         <div class="cake-plate"></div>
       </div>
 
-      <div id="cakeFinishedBtn" style="display: none; margin-top: 25px;">
+      <div id="cakeFinishedBtn" style="display: none; margin-top: 20px;">
         <button class="primary-btn" onclick="goToStage(4)">
           <span>🎉 बुझ गई! अब गिफ्ट बॉक्स खोलें 🎁</span>
         </button>
@@ -718,8 +629,8 @@
 
     <!-- STAGE 4: Gift Box Screen -->
     <div class="screen-stage" id="stage4">
-      <h2 style="font-size: 26px; color: #ff80bf; margin-bottom: 8px;">आपके लिए एक ख़ास तोहफ़ा!</h2>
-      <p style="color: #ffd7e2; font-size: 14px; margin-bottom: 20px;">तोहफ़ा खोलने के लिए बॉक्स पर क्लिक करें:</p>
+      <h2 style="font-size: 22px; color: #ff80bf; margin-bottom: 6px;">आपके लिए एक ख़ास तोहफ़ा!</h2>
+      <p style="color: #ffd7e2; font-size: 13px; margin-bottom: 16px;">तोहफ़ा खोलने के लिए बॉक्स पर क्लिक करें:</p>
       
       <div class="gift-3d-wrap" onclick="goToStage(5)">
         <div class="gift-box">
@@ -733,36 +644,26 @@
     <!-- STAGE 5: Letter -->
     <div class="screen-stage" id="stage5">
       <div class="envelope-card" onclick="goToStage(6)">
-        <div style="font-size: 40px; margin-bottom: 8px;">💌</div>
-        <h3 style="font-size: 21px; color: #c2185b; margin-bottom: 10px;">एक ख़ास ख़त आपके नाम</h3>
-        <p style="font-size: 14px; line-height: 1.6; color: #444; margin-bottom: 16px;">
+        <div style="font-size: 36px; margin-bottom: 6px;">💌</div>
+        <h3 style="font-size: 19px; color: #c2185b; margin-bottom: 8px;">एक ख़ास ख़त आपके नाम</h3>
+        <p style="font-size: 13px; line-height: 1.5; color: #444; margin-bottom: 14px;">
           "इस ख़त के अंदर कुछ अनमोल यादें और वो दिल की बात छुपी है जो सिर्फ आपके लिए है..."
         </p>
-        <div style="background: #ff4081; color: #fff; font-size: 14px; font-weight: 600; padding: 10px 22px; border-radius: 25px; display: inline-block;">
+        <div style="background: #ff4081; color: #fff; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px; display: inline-block;">
           ✨ ख़त खोलें (Open Letter)
         </div>
       </div>
     </div>
 
-    <!-- STAGE 6: FULL FESTIVE POSTER CARD -->
+    <!-- STAGE 6: FULLY RESPONSIVE POSTER CARD (NEVER CUTS) -->
     <div class="screen-stage" id="stage6">
       <div class="poster-container">
         
-        <!-- Background Scattered Confetti & Stars to remove empty feeling -->
-        <span class="confetti-decor" style="top: 15px; left: 75px; color: #e91e63;">✨</span>
-        <span class="confetti-decor" style="top: 30px; right: 80px; color: #ff9800;">🎉</span>
-        <span class="confetti-decor" style="top: 110px; left: 15px; color: #9c27b0;">🌸</span>
-        <span class="confetti-decor" style="top: 120px; right: 20px; color: #00bcd4;">⭐</span>
-        <span class="confetti-decor" style="bottom: 85px; left: 12px; color: #e91e63;">💖</span>
-        <span class="confetti-decor" style="bottom: 90px; right: 15px; color: #ffb300;">✨</span>
-        <span class="confetti-decor" style="bottom: 130px; left: 48%; color: #ff4081;">🎀</span>
-
-        <!-- Left Balloons -->
+        <!-- Balloons -->
         <div class="balloon-art b-pink-top-l"></div>
         <div class="balloon-art b-purple-top-l"></div>
         <div class="balloon-art b-blue-top-l"></div>
 
-        <!-- Right Balloons -->
         <div class="balloon-art b-gold-top-r"></div>
         <div class="balloon-art b-purple-top-r"></div>
         <div class="balloon-art b-blue-top-r"></div>
@@ -791,24 +692,23 @@
           </div>
         </div>
 
-        <!-- 4 Photos Grid with Center Heart Doodle -->
+        <!-- 4 Photos Auto-Fit Grid -->
         <div class="photos-canvas-grid">
           
-          <!-- Center Heart Doodle filling gap between 4 photos -->
           <div class="center-doodle">💖</div>
 
-          <!-- 1. Top-Left Circle Frame (With Crown & Flowers) -->
+          <!-- 1. Top-Left Circle Frame -->
           <div class="photo-slot slot-1">
-            <div style="position: absolute; top: -10px; right: -5px; font-size: 20px; z-index: 5;">👑</div>
+            <div style="position: absolute; top: -8px; right: 2px; font-size: clamp(14px, 4vw, 18px); z-index: 5;">👑</div>
             <div class="circle-holder">
               <img id="img0" src="pic1.jpg" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'" alt="Photo 1" />
             </div>
-            <div style="position: absolute; bottom: -8px; left: -6px; font-size: 24px; z-index: 5;">🌸</div>
+            <div style="position: absolute; bottom: -6px; left: 0px; font-size: clamp(16px, 4.5vw, 22px); z-index: 5;">🌸</div>
           </div>
 
           <!-- 2. Top-Right Scalloped Cloud Frame -->
           <div class="photo-slot slot-2">
-            <div style="position: absolute; top: -5px; left: 8px; font-size: 18px; z-index: 5;">✨</div>
+            <div style="position: absolute; top: -4px; left: 8px; font-size: clamp(12px, 3.5vw, 16px); z-index: 5;">✨</div>
             <svg class="scallop-svg-box" viewBox="0 0 200 200">
               <defs>
                 <clipPath id="smoothScallop">
@@ -846,7 +746,7 @@
             </svg>
           </div>
 
-          <!-- 3. Bottom-Left Standing Card -->
+          <!-- 3. Bottom-Left Card -->
           <div class="photo-slot slot-3">
             <div class="rect-card">
               <img id="img2" src="pic3.jpg" onerror="this.src='https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80'" alt="Photo 3" />
@@ -854,7 +754,7 @@
             <span class="photo-badge-tag">Stay Blessed ♡</span>
           </div>
 
-          <!-- 4. Bottom-Right Standing Card -->
+          <!-- 4. Bottom-Right Card -->
           <div class="photo-slot slot-4">
             <div class="rect-card">
               <img id="img3" src="pic4.jpg" onerror="this.src='https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80'" alt="Photo 4" />
@@ -864,10 +764,10 @@
 
         </div>
 
-        <!-- Festive Footer with Cake, Glowing Ribbon & Gift Box -->
+        <!-- Footer -->
         <div class="poster-footer">
           <div class="mini-cake">🎂</div>
-          <div style="text-align: center; flex: 1; padding: 0 5px;">
+          <div style="text-align: center; flex: 1; padding: 0 4px;">
             <div class="shining-ribbon">
               Always Shine Bright, Pinki (NiNi) ✨
             </div>
@@ -903,10 +803,10 @@
       reset() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.radius = Math.random() * 2.8 + 1.2;
+        this.radius = Math.random() * 2.5 + 1;
         this.color = dotColors[Math.floor(Math.random() * dotColors.length)];
-        this.vx = (Math.random() - 0.5) * 0.8;
-        this.vy = (Math.random() - 0.5) * 0.8;
+        this.vx = (Math.random() - 0.5) * 0.7;
+        this.vy = (Math.random() - 0.5) * 0.7;
         this.alpha = Math.random() * 0.7 + 0.3;
         this.pulseSpeed = Math.random() * 0.03 + 0.01;
       }
@@ -922,15 +822,11 @@
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
         ctx.globalAlpha = Math.max(0.1, Math.min(1, this.alpha));
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = this.color;
         ctx.fill();
-        ctx.globalAlpha = 1;
-        ctx.shadowBlur = 0;
       }
     }
 
-    for (let i = 0; i < 70; i++) dots.push(new Dot());
+    for (let i = 0; i < 60; i++) dots.push(new Dot());
 
     function animateDots() {
       ctx.clearRect(0, 0, width, height);
